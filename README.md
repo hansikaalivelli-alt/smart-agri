@@ -2,6 +2,12 @@
 
 This repository contains a static web app for a project titled **Smart Agriculture and Rural Development using IoT and Machine Learning**.
 
+## Live Website
+
+Visit the project website:
+
+https://hansikaalivelli-alt.github.io/smart-agri/
+
 ## Features
 
 - Responsive homepage for the project
