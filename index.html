@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Agriculture and Rural Development</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Smart Agriculture home">
+      <span class="brand-mark">SA</span>
+      <span>Smart Agriculture</span>
+    </a>
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="#dashboard">Dashboard</a>
+      <a href="#ml">ML Advisor</a>
+      <a href="#iot">IoT</a>
+      <a href="#rural">Rural Development</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="eyebrow">IoT + Machine Learning project</p>
+        <h1>Smart Agriculture and Rural Development</h1>
+        <p>
+          A digital farming platform that monitors field conditions, recommends crops,
+          supports irrigation decisions, and connects rural communities with useful
+          development resources.
+        </p>
+        <div class="hero-actions">
+          <a class="primary-btn" href="#dashboard">View Dashboard</a>
+          <a class="secondary-btn" href="#ml">Try Crop Advisor</a>
+        </div>
+      </div>
+      <div class="hero-panel" aria-label="Live field summary">
+        <div class="signal-card">
+          <span class="signal-label">Soil Moisture</span>
+          <strong id="heroMoisture">64%</strong>
+          <small>Optimal for irrigation interval</small>
+        </div>
+        <div class="field-grid" aria-hidden="true">
+          <span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="dashboard">
+      <div class="section-heading">
+        <p class="eyebrow">Live monitoring</p>
+        <h2>IoT Field Dashboard</h2>
+        <p>Sensor readings can help farmers act early and reduce water, fertilizer, and crop loss.</p>
+      </div>
+      <div class="metrics-grid">
+        <article class="metric-card">
+          <span>Temperature</span>
+          <strong id="temperatureValue">28°C</strong>
+          <div class="meter"><span style="width: 70%"></span></div>
+        </article>
+        <article class="metric-card">
+          <span>Humidity</span>
+          <strong id="humidityValue">72%</strong>
+          <div class="meter"><span style="width: 72%"></span></div>
+        </article>
+        <article class="metric-card">
+          <span>Soil Moisture</span>
+          <strong id="moistureValue">64%</strong>
+          <div class="meter"><span style="width: 64%"></span></div>
+        </article>
+        <article class="metric-card">
+          <span>Rainfall Chance</span>
+          <strong id="rainfallValue">38%</strong>
+          <div class="meter"><span style="width: 38%"></span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="split-section" id="ml">
+      <div>
+        <p class="eyebrow">Machine learning module</p>
+        <h2>Crop Recommendation Advisor</h2>
+        <p>
+          Enter field conditions to receive a sample recommendation. In a complete
+          implementation, this module can be connected to a trained ML model using soil,
+          weather, and market data.
+        </p>
+      </div>
+      <form class="advisor" id="advisorForm">
+        <label>
+          Soil type
+          <select id="soilType">
+            <option value="loamy">Loamy</option>
+            <option value="clay">Clay</option>
+            <option value="sandy">Sandy</option>
+            <option value="black">Black soil</option>
+          </select>
+        </label>
+        <label>
+          Soil moisture (%)
+          <input id="soilMoisture" type="number" min="0" max="100" value="62" />
+        </label>
+        <label>
+          Average temperature (°C)
+          <input id="temperature" type="number" min="5" max="50" value="28" />
+        </label>
+        <label>
+          Rainfall level
+          <select id="rainfall">
+            <option value="medium">Medium</option>
+            <option value="low">Low</option>
+            <option value="high">High</option>
+          </select>
+        </label>
+        <button type="submit">Recommend Crop</button>
+        <output class="recommendation" id="recommendation">Recommended: Rice, maize, or vegetables based on current inputs.</output>
+      </form>
+    </section>
+
+    <section class="section" id="iot">
+      <div class="section-heading">
+        <p class="eyebrow">Automation</p>
+        <h2>IoT System Architecture</h2>
+      </div>
+      <div class="timeline">
+        <article>
+          <span>01</span>
+          <h3>Sensor Layer</h3>
+          <p>Soil moisture, temperature, humidity, rainfall, pH, and light sensors collect field data.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Connectivity</h3>
+          <p>Microcontrollers such as Arduino, ESP32, or Raspberry Pi send data to a cloud dashboard.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Decision Support</h3>
+          <p>ML models analyze patterns and generate recommendations for crop, water, and disease risk.</p>
+        </article>
+        <article>
+          <span>04</span>
+          <h3>Farmer Action</h3>
+          <p>Alerts and controls support irrigation scheduling, resource planning, and yield improvement.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="rural">
+      <div class="section-heading">
+        <p class="eyebrow">Community impact</p>
+        <h2>Rural Development Benefits</h2>
+      </div>
+      <div class="benefit-grid">
+        <article>
+          <h3>Water Conservation</h3>
+          <p>Smart irrigation helps reduce water waste and supports climate-resilient farming.</p>
+        </article>
+        <article>
+          <h3>Higher Productivity</h3>
+          <p>Data-based recommendations improve crop selection, planning, and farm output.</p>
+        </article>
+        <article>
+          <h3>Farmer Awareness</h3>
+          <p>Dashboards and alerts make agricultural information easier to understand and act on.</p>
+        </article>
+        <article>
+          <h3>Digital Inclusion</h3>
+          <p>IoT and cloud tools bring modern technology into rural agricultural workflows.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Smart Agriculture and Rural Development using IoT and Machine Learning</p>
+    <p>Project web app ready for GitHub Pages deployment.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

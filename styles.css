@@ -1,0 +1,378 @@
+:root {
+  --leaf: #2f7d4b;
+  --leaf-dark: #1f5135;
+  --sky: #d9eef7;
+  --sun: #f5bd4f;
+  --ink: #18221d;
+  --muted: #5d6b63;
+  --panel: #ffffff;
+  --line: #dce7df;
+  --soft: #f5f8f1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", Arial, sans-serif;
+  color: var(--ink);
+  background: var(--soft);
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 72px;
+  padding: 14px clamp(18px, 5vw, 72px);
+  background: rgba(245, 248, 241, 0.94);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(16px);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  color: #fff;
+  background: var(--leaf);
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px 18px;
+}
+
+.nav a {
+  color: var(--muted);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.nav a:hover {
+  color: var(--leaf-dark);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(300px, 0.95fr);
+  align-items: center;
+  gap: clamp(32px, 6vw, 76px);
+  min-height: calc(100vh - 72px);
+  padding: clamp(44px, 7vw, 86px) clamp(18px, 5vw, 72px);
+  background:
+    linear-gradient(120deg, rgba(245, 248, 241, 0.94), rgba(217, 238, 247, 0.7)),
+    url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1800&q=80") center/cover;
+}
+
+.hero-content {
+  max-width: 740px;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: var(--leaf-dark);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 18px;
+  font-size: clamp(2.8rem, 7vw, 5.8rem);
+  line-height: 0.98;
+  letter-spacing: 0;
+}
+
+h2 {
+  margin-bottom: 12px;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.05;
+  letter-spacing: 0;
+}
+
+h3 {
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+}
+
+p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.hero-content > p:not(.eyebrow) {
+  max-width: 620px;
+  font-size: 1.12rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.primary-btn,
+.secondary-btn,
+.advisor button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0 20px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  font: inherit;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.primary-btn,
+.advisor button {
+  color: #fff;
+  background: var(--leaf-dark);
+}
+
+.secondary-btn {
+  color: var(--leaf-dark);
+  background: rgba(255, 255, 255, 0.78);
+  border-color: var(--line);
+}
+
+.hero-panel {
+  display: grid;
+  gap: 18px;
+}
+
+.signal-card,
+.metric-card,
+.advisor,
+.timeline article,
+.benefit-grid article {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 20px 60px rgba(31, 81, 53, 0.12);
+}
+
+.signal-card {
+  padding: 26px;
+}
+
+.signal-card strong {
+  display: block;
+  margin: 6px 0;
+  color: var(--leaf-dark);
+  font-size: 3rem;
+}
+
+.signal-label,
+.metric-card span {
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.field-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(48px, 1fr));
+  gap: 10px;
+}
+
+.field-grid span {
+  min-height: 72px;
+  border-radius: 8px;
+  background: linear-gradient(145deg, #5f9f5c, #d4a45c);
+  opacity: 0.9;
+}
+
+.section,
+.split-section {
+  padding: clamp(54px, 8vw, 94px) clamp(18px, 5vw, 72px);
+}
+
+.section-heading {
+  max-width: 760px;
+  margin-bottom: 28px;
+}
+
+.metrics-grid,
+.benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.metric-card {
+  padding: 22px;
+}
+
+.metric-card strong {
+  display: block;
+  margin: 14px 0;
+  font-size: 2.2rem;
+}
+
+.meter {
+  overflow: hidden;
+  height: 10px;
+  border-radius: 999px;
+  background: #edf2ee;
+}
+
+.meter span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--leaf), var(--sun));
+}
+
+.split-section {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
+  align-items: start;
+  gap: clamp(28px, 5vw, 70px);
+  background: #fff;
+}
+
+.advisor {
+  display: grid;
+  gap: 16px;
+  padding: 24px;
+}
+
+.advisor label {
+  display: grid;
+  gap: 8px;
+  color: var(--ink);
+  font-weight: 800;
+}
+
+.advisor input,
+.advisor select {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--ink);
+  background: #fff;
+  font: inherit;
+}
+
+.recommendation {
+  display: block;
+  min-height: 62px;
+  padding: 14px;
+  border-radius: 8px;
+  color: var(--leaf-dark);
+  background: #edf8ef;
+  font-weight: 800;
+  line-height: 1.5;
+}
+
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.timeline article,
+.benefit-grid article {
+  padding: 22px;
+}
+
+.timeline span {
+  display: inline-grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  margin-bottom: 18px;
+  border-radius: 8px;
+  color: #fff;
+  background: var(--leaf);
+  font-weight: 800;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 24px clamp(18px, 5vw, 72px);
+  border-top: 1px solid var(--line);
+  background: var(--leaf-dark);
+}
+
+footer p {
+  margin: 0;
+  color: #eef7ee;
+}
+
+@media (max-width: 980px) {
+  .hero,
+  .split-section {
+    grid-template-columns: 1fr;
+  }
+
+  .metrics-grid,
+  .timeline,
+  .benefit-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .topbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .nav {
+    justify-content: flex-start;
+  }
+
+  .metrics-grid,
+  .timeline,
+  .benefit-grid {
+    grid-template-columns: 1fr;
+  }
+
+  footer {
+    flex-direction: column;
+  }
+}
